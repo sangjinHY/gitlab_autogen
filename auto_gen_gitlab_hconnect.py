@@ -18,8 +18,8 @@ group_create = 1 # is group already create? yes = 0 or create new group = 1
 year = "2018"
 lecture_code = "test"
 class_code = "0000"
-username = "0000"
-password = "0000"
+username = "1111"
+password = "2222"
 driver_path = "/Users/sangjin/Downloads/chromedriver"
 ####
 
@@ -127,7 +127,8 @@ for i in range(0,number_of_student):
 		print("failed - no account: " + student_id)
 		webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
 		continue
-	
+	time.sleep(1)
+
 	# select student
 	driver.find_element_by_xpath('//*[@id="select2-drop"]').click()
 
@@ -139,4 +140,5 @@ for i in range(0,number_of_student):
 
 	print("success to create project: " + student_id)
 
-
+# click left-top menu button - Groups
+driver.find_element_by_xpath('/html/body/header/div/div/h1/span/a').click()
